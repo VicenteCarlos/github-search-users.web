@@ -1,7 +1,6 @@
 import { Container } from "./style";
 import { IoIosMap, IoIosLink } from "react-icons/io";
 
-
 const CardUser = () => {
   return (
     <Container>
@@ -16,20 +15,20 @@ const CardUser = () => {
         <p>This profile has no bio</p>
         <div className="github-infos">
           {new Array(3).fill(0).map((item, i) => (
-            <div className={`box-${i+1}`}>
+            <div className={`box-${i + 1}`}>
               <h5>repos</h5>
               <span>count</span>
             </div>
           ))}
         </div>
-        <div className="profile">
+        <div className="information">
           <div className="localization">
             <IoIosMap />
-            <p className="p">San Francisco</p>
+            <a href="#">San Francisco</a>
           </div>
           <div className="linK">
             <IoIosLink />
-            <p className="p">Link.com</p>
+            <a href="#">Link.com</a>
           </div>
         </div>
       </div>

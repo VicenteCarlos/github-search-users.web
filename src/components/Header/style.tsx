@@ -5,6 +5,7 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 
     h1, #dark-mode {
       margin: 0 200px;

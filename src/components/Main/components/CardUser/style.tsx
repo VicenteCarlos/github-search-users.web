@@ -13,7 +13,7 @@ const Container = styled.div`
   img,
   #content-infos {
     margin-top: 5%;
-    margin-left: 7%;
+    margin-left: 4%;
   }
 
   #content-infos {
@@ -44,11 +44,12 @@ const Container = styled.div`
       background-color: #141c2f;
       padding: 10px;
       border-radius: 15px;
-      width: 200%;
+      width: 105%;
+      height: 12vh;
     }
 
-    .profile {
-        margin-top: 5px;
+    .information {
+        margin-top: 40px;
         display: flex;
 
       .localization,
@@ -57,10 +58,13 @@ const Container = styled.div`
         justify-content: flex-start;
         align-items: center;
         font-size: 20px;
+        margin: 0 15px;
 
 
-        .profile-p {
-          margin: 0 0px;
+        a {
+          margin: 0 10px;
+          text-decoration: none;
+          color: white
         }
       }
     }
