@@ -1,34 +1,41 @@
+import { IDataProps } from "../../../../interfaces";
 import { Container } from "./style";
 import { IoIosMap, IoIosLink } from "react-icons/io";
 
-const CardUser = () => {
+const CardUser = ({ data }: IDataProps) => {
+  const moreData = [
+    { title: "Repos", count: data.public_repos },
+    { title: "Seguidores", count: data.followers },
+    { title: "Seguindo", count: data.following },
+  ];
+
   return (
     <Container>
-      <img src="../../../../../public/assets/img/perfil.png" alt="#" />
+      <img src={data.avatar_url} alt="user" />
       <div id="content-infos">
         <div className="content-title">
           <hgroup>
-            <h2>Name</h2>
-            <h4>@name</h4>
+            <h2>{data.login}</h2>
+            <h4>@{data.name}</h4>
           </hgroup>
         </div>
         <p>This profile has no bio</p>
         <div className="github-infos">
-          {new Array(3).fill(0).map((item, i) => (
+          {moreData.map((item, i) => (
             <div className={`box-${i + 1}`}>
-              <h5>repos</h5>
-              <span>count</span>
+              <h5>{item.title}</h5>
+              <span>{item.count}</span>
             </div>
           ))}
         </div>
         <div className="information">
           <div className="localization">
             <IoIosMap />
-            <a href="#">San Francisco</a>
+            <a href="#">{data.location}</a>
           </div>
           <div className="linK">
             <IoIosLink />
-            <a href="#">Link.com</a>
+            <a href={data.blog}>Link.com</a>
           </div>
         </div>
       </div>
