@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
 import { api, token } from "../../services/api";
 import { CardUser } from "./components/CardUser";
-import { StyledMain } from "./style";
+import { InputBar, StyledMain } from "./style";
 import { IoIosSearch } from "react-icons/io";
 import { TailSpin } from "react-loader-spinner";
 import { IProfileProps } from "../../interfaces";
 import { ToastContainer, toast } from "react-toastify";
-import { configToast } from "./configToast";
+import { configToastDark, configToastLight } from "./configToast";
 import "react-toastify/dist/ReactToastify.css";
+import { useDarkMode } from "../../contexts/DarkModeProvider";
 
 const Main = () => {
   const [text, setText] = useState<string>("vicentecarlos");
   const [state, setState] = useState<boolean>(false);
   const [profile, setProfile] = useState({} as IProfileProps);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { isDarkMode } = useDarkMode();
 
   const handleState = () => setState(!state);
 
@@ -52,9 +55,15 @@ const Main = () => {
       .then((res) => {
         setProfile(res);
         setIsLoading(false);
-        toast.success("Usuário encontrado!", configToast);
+        isDarkMode
+          ? toast.success("Usuário encontrado!", configToastDark)
+          : toast.success("Usuário encontrado!", configToastLight);
       })
-      .catch((err) => toast.error("Usuário inválido!", configToast));
+      .catch((err) => {
+        isDarkMode
+          ? toast.error("Usuário inválido!", configToastDark)
+          : toast.error("Usuário inválido!", configToastLight);
+      });
   }, [state]);
 
   return (
@@ -70,14 +79,14 @@ const Main = () => {
         pauseOnHover
         theme="dark"
       />
-      <div id="input-bar">
+      <InputBar isDarkMode={isDarkMode}>
         <IoIosSearch />
         <input
           placeholder="Pesquisar Usuário"
           onChange={(e) => setText(e.target.value)}
         />
         <button onClick={handleState}>Pesquisar</button>
-      </div>
+      </InputBar>
       {isLoading ? (
         <TailSpin height="80" width="80" color="#1F2A48" ariaLabel="loading" />
       ) : (

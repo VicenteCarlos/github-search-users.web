@@ -1,8 +1,11 @@
+import { useDarkMode } from "../../../../contexts/DarkModeProvider";
 import { IDataPropsProfile } from "../../../../interfaces";
 import { Container } from "./style";
 import { IoIosMap, IoIosLink } from "react-icons/io";
 
 const CardUser = ({ profile }: IDataPropsProfile) => {
+  const { isDarkMode } = useDarkMode()
+  
   const moreData = [
     { title: "Repos", count: profile.public_repos },
     { title: "Seguidores", count: profile.followers },
@@ -10,7 +13,7 @@ const CardUser = ({ profile }: IDataPropsProfile) => {
   ];
 
   return (
-    <Container>
+    <Container isDarkMode={isDarkMode}>
       <img src={profile.avatar_url} alt="user" />
       <div id="content-infos">
         <div className="content-title">

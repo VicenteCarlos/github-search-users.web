@@ -3,7 +3,8 @@ import { styled } from "styled-components";
 const Container = styled.div`
   width: 40vw;
   height: 50vh;
-  background-color: #1f2a48;
+  background-color: ${({ isDarkMode }) => (isDarkMode ? "#1f2a48" : "#283618")};
+  color: #fefae0;
   border-radius: 15px;
   margin-top: 20px;
   display: flex;
@@ -46,7 +47,10 @@ const Container = styled.div`
       justify-content: space-around;
       align-items: center;
       margin-top: 10px;
-      background-color: #141c2f;
+      background-color: ${({ isDarkMode }) =>
+        isDarkMode ? "#141c2f" : "#081c15"};
+      color: ${({ isDarkMode }) =>
+        isDarkMode ? "white" : "#fefae0"};
       padding: 10px;
       border-radius: 15px;
       width: 105%;
@@ -60,8 +64,8 @@ const Container = styled.div`
     }
 
     .information {
-        margin-top: 40px;
-        display: flex;
+      margin-top: 40px;
+      display: flex;
 
       .localization,
       .linK {
@@ -71,11 +75,10 @@ const Container = styled.div`
         font-size: 20px;
         margin: 0 15px;
 
-
         a {
           margin: 0 10px;
           text-decoration: none;
-          color: white
+          color: white;
         }
       }
     }

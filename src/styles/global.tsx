@@ -9,7 +9,9 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Montserrat', sans-serif;
-        background-color: #141c2f;
+        background-color: ${({ isDarkMode }) =>
+          isDarkMode ? "#141c2f" : "lightgray"};
+          transition: 0.5s;
         color: white;
     }
 `;

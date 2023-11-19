@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import { styled } from "styled-components";
 
 const StyledHeader = styled.header`
   #content-header {
@@ -6,8 +6,10 @@ const StyledHeader = styled.header`
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
-    h1, #dark-mode {
+    h1,
+    #dark-mode {
       margin: 0 170px;
     }
 
@@ -15,6 +17,12 @@ const StyledHeader = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.5s;
+      color: ${({ isDarkMode }) => (isDarkMode ? "white" : "black")};
 
       span {
         margin: 0 10px;
@@ -23,4 +31,4 @@ const StyledHeader = styled.header`
   }
 `;
 
-export { StyledHeader }
+export { StyledHeader };

@@ -1,4 +1,4 @@
-const configToast = {
+const configToastDark = {
   position: "top-right",
   autoClose: 2000,
   hideProgressBar: false,
@@ -9,4 +9,15 @@ const configToast = {
   theme: "dark",
 };
 
-export { configToast };
+const configToastLight = {
+  position: "top-right",
+  autoClose: 2000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "light",
+};
+
+export { configToastDark, configToastLight };

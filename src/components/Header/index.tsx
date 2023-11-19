@@ -1,15 +1,18 @@
-import { IoIosSunny } from "react-icons/io";
+import { IoIosSunny, IoIosMoon } from "react-icons/io";
 import { StyledHeader } from "./style";
+import { useDarkMode } from "../../contexts/DarkModeProvider";
 
 const Header = () => {
+  const { isDarkMode, handleDarkMode } = useDarkMode();
+
   return (
-    <StyledHeader>
+    <StyledHeader isDarkMode={isDarkMode}>
       <div id="content-header">
         <h1>GitHub API</h1>
-        <div id="dark-mode">
-          <span>LIGHT</span>
-          <IoIosSunny />
-        </div>
+        <button id="dark-mode" onClick={handleDarkMode}>
+          <span>{isDarkMode ? "DARK" : "LIGHT"}</span>
+          {isDarkMode ? <IoIosMoon /> : <IoIosSunny />}
+        </button>
       </div>
     </StyledHeader>
   );

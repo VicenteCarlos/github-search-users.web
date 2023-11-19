@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const token = "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";
+const token = "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";
 
 const api = axios.create({ baseURL: "https://api.github.com/users" });
 
