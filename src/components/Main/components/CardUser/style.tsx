@@ -7,13 +7,18 @@ const Container = styled.div`
   border-radius: 15px;
   margin-top: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
 
   img,
   #content-infos {
-    margin-top: 5%;
-    margin-left: 4%;
+    margin: 5% 45px 0 45px;
+  }
+
+  img {
+    width: 147px;
+    height: 131px;
+    border-radius: 100%;
   }
 
   #content-infos {
@@ -33,7 +38,7 @@ const Container = styled.div`
     }
 
     p {
-      margin: 20px 0;
+      margin: 30px 0;
     }
 
     .github-infos {
@@ -46,6 +51,12 @@ const Container = styled.div`
       border-radius: 15px;
       width: 105%;
       height: 12vh;
+
+      .box {
+        h5 {
+          margin: 9px 0;
+        }
+      }
     }
 
     .information {

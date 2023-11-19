@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
     margin-bottom: 50px;
 
     h1, #dark-mode {
-      margin: 0 200px;
+      margin: 0 170px;
     }
 
     #dark-mode {

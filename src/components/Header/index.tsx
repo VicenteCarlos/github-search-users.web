@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <div id="content-header">
-        <h1>Header</h1>
+        <h1>GitHub API</h1>
         <div id="dark-mode">
           <span>LIGHT</span>
           <IoIosSunny />
