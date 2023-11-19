@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Main = () => {
   const [text, setText] = useState<string>("vicentecarlos");
   const [state, setState] = useState<boolean>(false);
-  const [profile, setProfile] = useState({});
+  const [profile, setProfile] = useState({} as IProfileProps);
   const [isLoading, setIsLoading] = useState(true);
 
   const handleState = () => setState(!state);
